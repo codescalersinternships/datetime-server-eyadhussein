@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
-	datetime "github.com/codescalersinternships/datetime-server-eyadhussein/pkg"
+	"github.com/codescalersinternships/datetime-server-eyadhussein/pkg/datetimehttp"
 )
 
 func main() {
-	http.HandleFunc("/datetime", datetime.GetDateAndTime)
+	http.HandleFunc("/datetime", datetimehttp.GetDateAndTime)
 
 	log.Println("Starting server on port 8080...")
 
