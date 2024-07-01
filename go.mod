@@ -1,6 +1,6 @@
 module github.com/codescalersinternships/datetime-server-eyadhussein
 
-go 1.22.4
+go 1.22
 
 require (
 	github.com/bytedance/sonic v1.11.9 // indirect

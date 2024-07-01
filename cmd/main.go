@@ -11,6 +11,8 @@ import (
 func main() {
 	http.HandleFunc("/datetime", datetime.GetDateAndTime)
 
+	log.Println("Starting server on port 8080...")
+
 	err := http.ListenAndServe(":8080", nil)
 
 	if err != nil {
