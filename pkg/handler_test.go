@@ -1,4 +1,4 @@
-package datetimeserver
+package datetime
 
 import (
 	"io"
