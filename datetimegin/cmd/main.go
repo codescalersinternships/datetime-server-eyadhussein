@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	datetimegin "github.com/codescalersinternships/datetime-server-eyadhussein/datetimegin/pkg"
+	datetimegin "github.com/codescalersinternships/datetime-server-eyadhussein/pkg"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,7 +14,7 @@ func main() {
 
 	log.Println("Starting server on port 8080...")
 
-	err := router.Run("localhost:8080")
+	err := router.Run("0.0.0.0:8080")
 
 	if err != nil {
 		log.Fatalf("failed to start the server %v", err)
