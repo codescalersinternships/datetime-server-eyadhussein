@@ -1,0 +1,11 @@
+version: "3"
+services:
+  datetimegin:
+    build: ./datetimegin
+    ports:
+      - "5000:8080"
+
+  datetimehttp:
+    build: ./datetimehttp
+    ports:
+      - "3000:8080"
