@@ -2,6 +2,7 @@ package datetimehttp
 
 import (
 	"io"
+	"net/http"
 	"net/http/httptest"
 	"testing"
 	"time"
@@ -9,8 +10,8 @@ import (
 
 const (
 	validEndpoint = "/datetime"
-	validMethod   = "GET"
-	successCode   = 200
+	validMethod   = http.MethodGet
+	successCode   = http.StatusOK
 	serverUrl     = "http://localhost:8080"
 
 	invalidEndpoint            = "/invalid"

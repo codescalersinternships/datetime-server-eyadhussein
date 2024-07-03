@@ -1,4 +1,4 @@
-FROM golang:1.22
+FROM golang:1.22 AS builder
 
 WORKDIR /app
 
@@ -12,6 +12,13 @@ COPY ./pkg/datetimegin ./pkg/datetimegin
 ENV PORT=8080
 
 RUN go build -o main ./cmd/datetimegin
+
+
+FROM scratch AS datetimeginimg
+
+WORKDIR /
+
+COPY --from=builder /app/main .
 
 EXPOSE 8080
 
