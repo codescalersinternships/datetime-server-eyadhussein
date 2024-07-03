@@ -6,11 +6,12 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 
-COPY . .
+COPY ./cmd/datetimegin ./cmd/datetimegin
+COPY ./pkg/datetimegin ./pkg/datetimegin
 
 ENV PORT=8080
 
-RUN go build -o main ./cmd
+RUN go build -o main ./cmd/datetimegin
 
 EXPOSE 8080
 

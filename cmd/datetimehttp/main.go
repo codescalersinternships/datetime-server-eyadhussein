@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	datetimehttp "github.com/codescalersinternships/datetime-server-eyadhussein/pkg"
+	"github.com/codescalersinternships/datetime-server-eyadhussein/pkg/datetimehttp"
 )
 
 func main() {

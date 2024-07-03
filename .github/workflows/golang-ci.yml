@@ -2,9 +2,6 @@ name: Go Test
 
 on:
   push:
-    branches:
-      - main
-      - development
 
 jobs:
   build:
@@ -19,23 +16,11 @@ jobs:
         with:
           go-version: "1.22.4"
 
-      - name: Run go fmt
-        run: |
-          cd datetimegin && go fmt ./...
-          cd ../datetimehttp && go fmt ./...
-          git diff --exit-code || (echo "Formatting issues found. Please run 'go fmt'." && exit 1)
+      - name: Check code formatting using gofmt
+        uses: Jerome1337/gofmt-action@v1.0.5
 
-      - name: Run golangci-lint in datetimegin
+      - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v6.0.1
-        with:
-          working-directory: datetimegin
-
-      - name: Run golangci-lint in datetimehttp
-        uses: golangci/golangci-lint-action@v6.0.1
-        with:
-          working-directory: datetimehttp
 
       - name: Test
-        run: |
-          cd datetimegin && go test -v ./...
-          cd ../datetimehttp && go test -v ./...
+        run: go test -v ./...

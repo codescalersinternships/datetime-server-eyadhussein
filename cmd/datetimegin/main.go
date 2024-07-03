@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	datetimegin "github.com/codescalersinternships/datetime-server-eyadhussein/pkg"
+	"github.com/codescalersinternships/datetime-server-eyadhussein/pkg/datetimegin"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,0 +1,18 @@
+FROM golang:1.22
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY ./cmd/datetimehttp ./cmd/datetimehttp
+COPY ./pkg/datetimehttp ./pkg/datetimehttp
+
+ENV PORT=8080
+
+RUN go build -o main ./cmd/datetimehttp
+
+EXPOSE 8080
+
+CMD ["./main"]
