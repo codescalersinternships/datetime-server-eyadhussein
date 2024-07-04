@@ -9,9 +9,7 @@ RUN go mod download
 COPY ./cmd/datetimehttp ./cmd/datetimehttp
 COPY ./pkg/datetimehttp ./pkg/datetimehttp
 
-ENV PORT=8080
-
-RUN go build -o main ./cmd/datetimehttp
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main ./cmd/datetimehttp
 
 
 FROM scratch AS datetimehttpimg

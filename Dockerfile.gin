@@ -9,9 +9,7 @@ RUN go mod download
 COPY ./cmd/datetimegin ./cmd/datetimegin
 COPY ./pkg/datetimegin ./pkg/datetimegin
 
-ENV PORT=8080
-
-RUN go build -o main ./cmd/datetimegin
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main ./cmd/datetimegin
 
 
 FROM scratch AS datetimeginimg
