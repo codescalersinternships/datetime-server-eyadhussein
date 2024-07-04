@@ -117,7 +117,7 @@ make run-all
 To format the project, run:
 
 ```bash
-make format
+make fmt
 ```
 
 To run lintter on the project, run:

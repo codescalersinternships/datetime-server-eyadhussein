@@ -12,7 +12,7 @@ build-all-bin:
 	go build -o ${BINARY_NAME_GIN} ./cmd/${BINARY_NAME_GIN}
 
 
-format:
+fmt:
 	go fmt ./...
 
 lint:
