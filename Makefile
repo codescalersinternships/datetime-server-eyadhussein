@@ -14,8 +14,12 @@ build-all-bin:
 
 format:
 	go fmt ./...
+
 lint:
 	golangci-lint run
+
+test:
+	go test ./...
 
 
 build-http-img:
