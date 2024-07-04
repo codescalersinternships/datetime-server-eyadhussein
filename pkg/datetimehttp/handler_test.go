@@ -16,9 +16,9 @@ const (
 
 	invalidEndpoint            = "/invalid"
 	invalidMethod              = "POST"
-	methodNotAllowedStatusCode = 405
-	notFoundStatusCode         = 404
-	internalServerErrorCode    = 500
+	methodNotAllowedStatusCode = http.StatusMethodNotAllowed
+	notFoundStatusCode         = http.StatusNotFound
+	internalServerErrorCode    = http.StatusInternalServerError
 
 	validDateTimeFormat   = "2006-01-02 15:04:05"
 	invalidDataTimeFormat = "2006-January-02"
