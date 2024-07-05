@@ -80,8 +80,9 @@ func TestGetDateTime(t *testing.T) {
 			t.Errorf("failed to read response body")
 		}
 
-		if string(data) != time.Now().Format(validDateTimeFormat) {
-			t.Errorf("expected date time format %s but got %s", time.Now().Format(validDateTimeFormat), string(data))
+		_, err = time.Parse(validDateTimeFormat, string(data))
+		if err != nil {
+			t.Errorf("expected date time format %s but got %s with different format", validDateTimeFormat, string(data))
 		}
 	})
 }

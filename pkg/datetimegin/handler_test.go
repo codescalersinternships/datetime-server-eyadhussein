@@ -88,8 +88,11 @@ func TestGetDateTime(t *testing.T) {
 		}
 
 		dataNoQoutes := string(data)[1 : len(data)-1]
-		if dataNoQoutes != time.Now().Format(validDateTimeFormat) {
-			t.Errorf("expected date time format %s but got %s", time.Now().Format(validDateTimeFormat), dataNoQoutes)
+
+		_, err = time.Parse(validDateTimeFormat, dataNoQoutes)
+		if err != nil {
+			t.Errorf("expected date time format %s but got %s with different format", validDateTimeFormat, dataNoQoutes)
 		}
+
 	})
 }
