@@ -19,7 +19,7 @@ func GetDateAndTime(c *gin.Context) {
 		c.IndentedJSON(http.StatusNotFound, "url not found")
 	}
 
-	if c.Request.Method != "GET" {
+	if c.Request.Method != http.MethodGet {
 		c.IndentedJSON(http.StatusMethodNotAllowed, "not allowed method")
 	}
 

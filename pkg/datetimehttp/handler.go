@@ -22,7 +22,7 @@ func GetDateAndTime(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if r.Method != "GET" {
+	if r.Method != http.MethodGet {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		return
 	}

@@ -17,7 +17,7 @@ const (
 	serverUrl     = "http://localhost:8080"
 
 	invalidEndpoint            = "/invalid"
-	invalidMethod              = "POST"
+	invalidMethod              = http.MethodPost
 	methodNotAllowedStatusCode = http.StatusMethodNotAllowed
 	notFoundStatusCode         = http.StatusNotFound
 	internalServerErrorCode    = http.StatusInternalServerError
