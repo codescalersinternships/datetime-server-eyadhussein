@@ -1,17 +1,19 @@
-version: "3"
+version: '3'
 services:
   datetimegin:
     build:
       context: .
       dockerfile: Dockerfile.gin
       target: datetimeginimg
+    image: datetimeginimg
     ports:
-      - "5000:8080"
+      - '5000:8080'
 
   datetimehttp:
     build:
       context: .
       dockerfile: Dockerfile.http
       target: datetimehttpimg
+    image: datetimehttpimg
     ports:
-      - "3000:8080"
+      - '3000:8080'

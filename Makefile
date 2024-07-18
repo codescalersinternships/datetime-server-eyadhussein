@@ -29,8 +29,7 @@ build-gin-img:
 	docker build -f Dockerfile.gin -t datetimeginimg .
 
 build-all-img:
-	docker build -f Dockerfile.gin -t datetimeginimg .
-	docker build -f Dockerfile.http -t datetimehttpimg .
+	docker-compose build
 
 
 run-http:
