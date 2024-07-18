@@ -15,13 +15,5 @@ import (
 // If the request method is not GET, it responds with a 405 Method Not Allowed status.
 // If the request is valid, it responds with a 200 OK status and the current date and time.
 func GetDateAndTime(c *gin.Context) {
-	if c.FullPath() != "/datetime" {
-		c.IndentedJSON(http.StatusNotFound, "url not found")
-	}
-
-	if c.Request.Method != http.MethodGet {
-		c.IndentedJSON(http.StatusMethodNotAllowed, "not allowed method")
-	}
-
 	c.IndentedJSON(http.StatusOK, time.Now().Format("2006-01-02 15:04:05"))
 }

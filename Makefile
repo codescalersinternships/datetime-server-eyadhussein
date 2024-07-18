@@ -23,19 +23,19 @@ test:
 
 
 build-http-img:
-	sudo docker build -f Dockerfile.http -t datetimehttpimg .
+	docker build -f Dockerfile.http -t datetimehttpimg .
 
 build-gin-img:
-	sudo docker build -f Dockerfile.gin -t datetimeginimg .
+	docker build -f Dockerfile.gin -t datetimeginimg .
 
 build-all-img:
-	sudo docker build -f Dockerfile.gin -t datetimeginimg .
-	sudo docker build -f Dockerfile.http -t datetimehttpimg .
+	docker build -f Dockerfile.gin -t datetimeginimg .
+	docker build -f Dockerfile.http -t datetimehttpimg .
 
 
 run-http:
-	sudo docker run --name datetimehttpcontainer datetimehttpimg
+	docker run --name datetimehttpcontainer datetimehttpimg
 run-gin:
-	sudo docker run --name datetimegincontainer datetimeginimg
+	docker run --name datetimegincontainer datetimeginimg
 run-all:
-	sudo docker-compose up
+	docker-compose up
